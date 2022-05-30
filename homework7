@@ -1,0 +1,23 @@
+let person="name:end age:18 height:170";
+let re=/[0-9]+/g;
+let re2=/[a-z]+/g;
+let re3=/:[0-9a-zA-Z]+/g;
+let re4=/:([0-9a-zA-Z])+/;
+let re5=/:([0-9a-zA-Z]+)/;
+let re6=/:\d+/g;
+let re7=/:\D+/g;
+let email="hello my email is s111010509@student.nqu.edu.tw ";
+let re8=/\w+@[\w\.]+/g;
+let email2=email+" hi welcome to s111@gam"
+let re9=/\w+@\w+\.[\w\.]+/g;
+
+
+console.log(person.match(re));
+console.log(person.match(re2));
+console.log(person.match(re3));
+console.log(person.match(re4));
+console.log(person.match(re5));
+console.log(person.match(re6));
+console.log(person.match(re7));
+console.log(email.match(re8));
+console.log(email2.match(re9));
