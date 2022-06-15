@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+p,h2,div{
+	 text-align:center;
+     vertical-align:middle;
+}
+</style>
 
+<h2>點擊到60附近時 將可看到可愛貓咪影片</h2>
+<p id="test">
+還需要再點:100次
+</p>
+<div >
+<button  onclick="end()">click me</button>
+</div>
+<p id="reward">
+未達成目標awa 前方有著私藏可愛的貓咪等著<br>
+</p>
+<div>
+<a id="link"></a>
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">先別點開喔~~不然我可不負責喔AwA</a>
+</div>
+
+<script>
+var remlink = document.getElementById("link");
+var a=document.links;
+var b=100,c=0;
+function ran()
+{
+	return Math.random();
+}
+     
+function end()
+{
+if(b==61 || b==60)
+    {
+    	alert("恭喜你 你非常的努力呢 點選下方網址前往 好好獎勵自己吧");
+		document.getElementById("reward").innerHTML ="可愛的貓咪在等著你 快按下連結吧";
+	a[0].href="https://www.youtube.com/results?			search_query=%E5%8F%AF%E6%84%9B%E8%B2%93%E5%92%AA";
+            a[0].innerHTML="恭喜達成目標";
+	}
+    else if(b>=58 && b<=59) alert("別再繼續點了 否則將收回");
+    else if(b<58) {
+    document.getElementById("reward").innerHTML ="就叫你不要點了";
+	a[0].href="https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    a[0].innerHTML="已收回獎勵";
+    }
+	b--;
+	document.getElementById("test").innerHTML ="還需要再點:"+b+"次";
+	d=ran();
+    if(b>=60)
+    {
+    if(d<0.3) b--;
+    else if(d>=0.3 && d<=0.7) b=b;
+    else if(d<1 && d>0.7) b++;
+    }
+    
+}
+
+</script>
+
+</body>
+</html>
