@@ -2,16 +2,28 @@
 <html>
 <body>
 <style>
-.test{
+.test3{
   display: flex;
   justify-content: center;
-  align-items: center;
-  
+  align-items: center;  
+}
+p{
+	color:red;
+}
+h2{
+	color:blue;
+}
+button{
+	background-color:yellow;
+}
+body{
+	background-color:aqua;
 }
 </style>
-<div class="test">
+<div class="test3">
 	<div class="test2">
-<h2>點擊到60附近時 將可看到可愛貓咪影片</h2>
+<h2 id="he2">
+點擊到60附近時 將可看到可愛貓咪影片</h2>
 <p id="test">
 還需要再點:100次
 </p>
@@ -46,14 +58,26 @@ if(b==61 || b==60 && c==0)
 	a[0].href="https://www.youtube.com/results?			search_query=%E5%8F%AF%E6%84%9B%E8%B2%93%E5%92%AA";
             a[0].innerHTML="恭喜達成目標";
             c++;
+            document.body.style.backgroundColor = 'orange';
+            document.getElementById("he2").style.color = "red";
+            document.getElementById("test").style.color = "yellow";
+            
 	}
-    else if(b>=58 && b<=59 && c==1) {alert("別再繼續點了 否則將收回"); c++;}
+    else if(b>=58 && b<=59 && c==1) {
+    alert("別再繼續點了 否則將收回"); 
+    c++;
+    document.body.style.backgroundColor = 'gray';
+    }
     
     else if(b<58) {
     document.getElementById("reward").innerHTML ="就叫你不要點了";
 	a[0].href="https://www.youtube.com/watch?v=dQw4w9WgXcQ";
     a[0].innerHTML="已收回獎勵";
-    
+    document.body.style.backgroundColor = 'black';
+    document.getElementById("he2").style.color = "white";
+    document.getElementById("test").style.color = "white";
+    document.getElementById("reward").style.color = "white";
+    document.getElementById("link").style.color = "yellow";
     }
 	b--;
 	document.getElementById("test").innerHTML ="還需要再點:"+b+"次";
