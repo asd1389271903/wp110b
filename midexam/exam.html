@@ -4,7 +4,9 @@
 <style>
 p,h2,div{
 	 text-align:center;
-     vertical-align:middle;
+     position: relative;
+  	 top: 50%;
+  	 transform: translate(0, -50%);
 }
 </style>
 
@@ -34,18 +36,21 @@ function ran()
      
 function end()
 {
-if(b==61 || b==60)
+if(b==61 || b==60 && c==0)
     {
     	alert("恭喜你 你非常的努力呢 點選下方網址前往 好好獎勵自己吧");
 		document.getElementById("reward").innerHTML ="可愛的貓咪在等著你 快按下連結吧";
 	a[0].href="https://www.youtube.com/results?			search_query=%E5%8F%AF%E6%84%9B%E8%B2%93%E5%92%AA";
             a[0].innerHTML="恭喜達成目標";
+            c++;
 	}
-    else if(b>=58 && b<=59) alert("別再繼續點了 否則將收回");
+    else if(b>=58 && b<=59 && c==1) {alert("別再繼續點了 否則將收回"); c++;}
+    
     else if(b<58) {
     document.getElementById("reward").innerHTML ="就叫你不要點了";
 	a[0].href="https://www.youtube.com/watch?v=dQw4w9WgXcQ";
     a[0].innerHTML="已收回獎勵";
+    
     }
 	b--;
 	document.getElementById("test").innerHTML ="還需要再點:"+b+"次";
